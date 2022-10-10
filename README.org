@@ -1,3 +1,5 @@
+* SoftwareX org-mode template
+
 ~SoftwareX_article_org_template~ is a org-mode template file for writing articles
 based on Elsevier's SoftwareX latex template.
 
