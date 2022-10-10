@@ -1,0 +1,537 @@
+# This file is an org template that, when exported, generates the Latex template
+# with the publication format of Elsevier's SoftwareX magazine.
+
+# Author: Gregorio Ambrosio Cestero. gambrosio [at] uma [dot] es
+
+# This file is in read only mode
+# C-x-q  to enable/disable buffer read only mode
+
+* Prelude (Ver.7.8)                                              :noexport:
+
+[[info:org#Export Settings]]
+[[https://orgmode.org/manual/Export-Settings.html#Export-Settings][13.2 Export Settings]]
+
+
+** Identification
+
+# [[https://orgmode.org/manual/Export-settings.html][Export settings]]
+#+TITLE: Title/Name of your software
+#+SUBTITLE: Subtitle (if any)
+
+
+# The following variables, when exporting latex, are included in \hypersetup{}
+
+#+DESCRIPTION: Paper for Elsevier SoftwareX Journal
+#+KEYWORDS: relational, data model, api, toolbox, dataset, robotics
+# Use keybind C-c . or C-c < or free format like "Saturday 9th, 2019"
+# #+DATE: October 6th, 2022
+#+AUTHOR: Gregorio Ambrosio Cestero
+#+EMAIL: gambrosio@uma.es
+#+LANGUAGE: en
+# #+CREATOR: uncomment with your text info
+# src_elisp{org-version} {{{results(=9.5.5=)}}}
+# src_elisp{emacs-version} {{{results(=28.2=)}}}
+
+** Org settings
+
+[[https://orgmode.org/manual/In_002dbuffer-Settings.html][In-buffer Settings (The Org Manual)]]
+
+# #+STARTUP: hidestars
+# #+STARTUP: hideblocks
+# #+STARTUP: nohideblocks
+#+STARTUP: overview
+#+STARTUP: indent
+#+STARTUP: logdrawer
+
+#+COLUMNS: %25ITEM %TAGS %TODO
+
+** Export settings (general)
+
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+
+#+OPTIONS: ':nil *:t -:t ::t <:t H:6 \n:nil ^:t arch:headline author:nil
+#+OPTIONS: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t tags:t
+#+OPTIONS: tasks:t tex:t timestamp:t title:nil toc:nil todo:nil |:t
+
+
+# TOC related
+# #+OPTIONS: toc:t          include all levels in TOC
+# #+OPTIONS: toc:2          only include two levels in TOC
+# #+OPTIONS: toc:nil        no default TOC at all
+
+# To move the TOC to a different location:
+# #+OPTIONS: toc:nil        no default TOC
+# ...
+# #+TOC: headlines 2        insert TOC here, with two headline levels
+
+# Use the TOC keyword to generate list of tables (resp. all listings) with captions.
+# #+TOC: listings           build a list of listings
+# #+TOC: tables             build a list of tables
+
+
+** Export settings (specific)
+*** Code
+
+ # To avoid evaluating code on export use the following header argument:
+ #+PROPERTY: header-args :eval never-export
+
+*** LaTeX
+
+[[https://orgmode.org/manual/LaTeX-specific-export-settings.html#LaTeX-specific-export-settings][13.10.2 LaTeX specific export settings]]
+[[https://orgmode.org/manual/Images-in-LaTeX-export.html][13.10.6 Images in LaTeX export]]
+
+[[https://www.elsevier.com/journals/softwarex/2352-7110/guide-for-authors][Guide for authors - SoftwareX - ISSN 2352-7110]]
+[[https://www.elsevier.com/authors/policies-and-guidelines/latex-instructions][Elsevier Latex Instructions]]
+
+
+# LaTeX specific export settings
+# ================================
+
+#+LATEX_COMPILER: pdflatex
+#+LATEX_CLASS: elsarticle
+#+LaTeX_CLASS_OPTIONS: [preprint,12pt, a4paper]
+
+#+begin_export latex
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+%% \usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+#+end_export
+
+#+LATEX_HEADER: \usepackage{lineno}  % adds line numbers
+# #+LATEX_HEADER: \modulolinenumbers[1]
+#+LATEX_HEADER: \usepackage{float}
+#+LATEX_HEADER: \restylefloat{table}
+
+#+LATEX_HEADER: \journal{SoftwareX}
+
+#+begin_comment
+#+LaTeX_CLASS_OPTIONS: [preprint,5p,times,twocolumn,a4paper]
+#+LaTeX_CLASS_OPTIONS: [preprint,5p,times,twocolumn,a4paper,12pt]
+#+LaTeX_CLASS_OPTIONS: [final,5p,a4paper,times,twocolumn]
+#+LaTeX_CLASS_OPTIONS: [authoryear,preprint,review,12pt]
+#+end_comment
+
+#+begin_comment
+#+LATEX_HEADER: \usepackage{amssymb}  % provides various useful mathematical symbols <- exported by default
+#+LATEX_HEADER: \usepackage{amsmath}   % provides extended theorem environments
+#+end_comment
+
+#+begin_comment
+# Customizing some colors for references.
+#+LATEX_HEADER: \usepackage[usenames,dvipsnames]{xcolor}
+#+LATEX_HEADER: \hypersetup{colorlinks=true}
+#+LATEX_HEADER: \AtBeginDocument{\hypersetup{citecolor=olive,urlcolor=Turquoise,linkcolor=olive}}
+#+end_comment
+
+#+begin_comment
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{color}
+#+LATEX_HEADER: \usepackage{xspace}
+#+LATEX_HEADER: \usepackage{booktabs} % enhances the quality of tables in LaTeX, providing extra commands as well as behind-the-scenes optimisation
+#+LATEX_HEADER: \usepackage{graphicx,dblfloatfix} % dblfloatfix magically fix the position of figures at the bottom, instead of sending them to the end of the document
+#+LATEX_HEADER: \usepackage{array}
+#+end_comment
+
+#+begin_comment
+#+LATEX_HEADER: \usepackage{multicol}
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \usepackage{colortbl}
+#+LATEX_HEADER: \usepackage{multirow}
+#+end_comment
+
+#+begin_comment
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+end_comment
+
+# From jraul papers
+#+begin_comment
+#+LATEX_HEADER: \newcommand\red[1]{\textcolor{red}{#1}}
+#+LATEX_HEADER: \newcommand\blue[1]{\textcolor{blue}{#1}}
+#+LATEX_HEADER: \newcommand\green[1]{\textcolor{green}{#1}}
+#+LATEX_HEADER: \newcommand\magenta[1]{\textcolor{magenta}{#1}}
+#+LATEX_HEADER: \newcommand\orange[1]{\textcolor{orange}{#1}}
+
+#+LATEX_HEADER: \newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
+#+LATEX_HEADER: \newcommand\Bo{\rule[-2ex]{0pt}{0pt}} % Bottom strut
+
+#+LATEX_HEADER: \newcommand{\C}[1]{\mathcal{#1}}
+#+LATEX_HEADER: \newcommand{\B}[1]{\boldsymbol{#1}}
+#+LATEX_HEADER: \newcommand{\bx}{\boldsymbol{x}}
+#+LATEX_HEADER: \newcommand{\by}{\boldsymbol{y}}
+#+LATEX_HEADER: \newcommand{\btheta}{\boldsymbol{\theta}}
+#+LATEX_HEADER: \newcommand{\NP}{\mbox{$\mathcal{NP}$-hard}}
+#+LATEX_HEADER: \newcommand{\bIH}{\boldsymbol{\mathrm{H}}}
+#+LATEX_HEADER: \newcommand{\degree}{\ensuremath{^\circ}}
+
+#+LATEX_HEADER: \providecommand{\EQ}[1]{Eq.#1}
+#+LATEX_HEADER: \providecommand{\FIG}[1]{Fig.~#1}
+#+LATEX_HEADER: \providecommand{\SEC}[1]{Sec.~#1}
+#+LATEX_HEADER: \providecommand{\TABLE}[1]{Tab.~#1}
+#+LATEX_HEADER: \providecommand{\VECTOR}[1]{\mathbf{#1}}
+#+LATEX_HEADER: \providecommand{\MATRIX}[1]{\mathbf{#1}}
+
+#+LATEX_HEADER: \providecommand{\hcrf}{\textit{ob}CRF\,\xspace}
+#+LATEX_HEADER: \providecommand{\hcrfs}{\textit{ob}CRFs\,\xspace}
+
+#+LATEX_HEADER: \providecommand{\etal}{\emph{et al.\,\xspace}}
+#+LATEX_HEADER: \providecommand{\ie}{\emph{i.e.\,\xspace}}
+#+LATEX_HEADER: \providecommand{\eg}{\emph{e.g.\,\xspace}}
+#+LATEX_HEADER: \providecommand{\RGBD}{\mbox{RGB-D}\,\xspace}
+#+end_comment
+
+
+* Preamble                                                       :ignore:
+
+#+begin_export latex
+\begin{frontmatter}
+#+end_export
+
+#+begin_export latex
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+#+end_export
+
+#+begin_export latex
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \address[label1]{}
+%% \address[label2]{}
+#+end_export
+
+#+begin_export latex
+\author[org]{A. Author 1\corref{cor1}}
+\cortext[cor1]{Corresponding author}
+\ead{author1@org}
+
+\author[org]{A. Author 2}
+\ead{author2@org}
+
+\address[org]{Your institute, some address}
+
+#+end_export
+
+#+BEGIN_abstract
+#+begin_export latex
+%% Text of abstract 
+#+end_export
+Ca. 100 words
+#+END_abstract
+
+#+begin_export latex
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+keyword 1 \sep keyword 2 \sep keyword 3
+
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+\end{keyword}
+#+end_export
+
+#+begin_export latex
+\end{frontmatter}
+#+end_export
+
+
+* Required Metadata
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+* Current code version
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+Ancillary data table required for subversion of the codebase. Kindly replace
+examples in right column with the correct information about your current code,
+and leave the left column as it is.
+
+#+begin_export latex
+\begin{table}[H]
+\begin{tabular}{|l|p{6.5cm}|p{6.5cm}|}
+\hline
+\textbf{Nr.} & \textbf{Code metadata description} & \textbf{Please fill in this column} \\
+\hline
+C1 & Current code version & For example v42 \\
+\hline
+C2 & Permanent link to code/repository used for this code version & For example: $https://github.com/mozart/mozart2$ \\
+\hline
+C3 & Code Ocean compute capsule & For example: $https://codeocean.com/2017/07/30/neurospeech-colon-an-open-source-software-for-parkinson-apos-s-speech-analysis/code$\\
+\hline
+C4 & Legal Code License   & List one of the approved licenses \\
+\hline
+C5 & Code versioning system used & For example svn, git, mercurial, etc. put none if none \\
+\hline
+C6 & Software code languages, tools, and services used & For example C++, python, r, MPI, OpenCL, etc. \\
+\hline
+C7 & Compilation requirements, operating environments \& dependencies & \\
+\hline
+C8 & If available Link to developer documentation/manual & For example: $http://mozart.github.io/documentation/$ \\
+\hline
+C9 & Support email for questions & \\
+\hline
+\end{tabular}
+\caption{Code metadata (mandatory)}
+\label{} 
+\end{table}
+#+end_export
+
+#+begin_export latex
+\linenumbers
+#+end_export
+
+#+begin_export latex
+%% main text
+#+end_export
+
+The permanent link to code/repository or the zip archive should include the following requirements: 
+
+README.txt and LICENSE.txt.
+
+Source code in a src/ directory, not the root of the repository.
+
+Tag corresponding with the version of the software that is reviewed.
+
+Documentation in the repository in a docs/ directory, and/or READMEs, as appropriate.
+
+
+
+
+* Motivation and significance
+
+Introduce the scientific background and the motivation for developing the software.
+
+Explain why the software is important, and describe the exact (scientific) problem(s) it solves.
+
+Indicate in what way the software has contributed (or how it will contribute in the future) to the process of scientific discovery; if available, this is to be supported by citing a research paper using the software.
+
+Provide a description of the experimental setting (how does the user use the software?).
+
+Introduce related work in literature (cite or list algorithms used, other software etc.).
+
+
+* Software description
+
+Describe the software in as much as is necessary to establish a vocabulary
+needed to explain its impact.
+
+** Software Architecture
+
+Give a short overview of the overall software architecture; provide a pictorial
+component overview or similar (if possible). If necessary provide implementation
+details.
+
+** Software Functionalities
+
+Present the major functionalities of the software.
+
+** Software Functionalities
+
+Present the major functionalities of the software.
+
+** Sample code snippets analysis (optional)
+
+* Illustrative Examples
+
+Provide at least one illustrative example to demonstrate the major functions.
+
+Optional: you may include one explanatory video that will appear next to your
+article, in the right hand side panel. (Please upload any video as a single
+supplementary file with your article. Only one MP4 formatted, with 50MB maximum
+size, video is possible per article. Recommended video dimensions are 640 x 480
+at a maximum of 30 frames/second. Prior to submission please test and validate
+your .mp4 file at
+/http://elsevier-apps.sciverse.com/GadgetVideoPodcastPlayerWeb/verification/. This
+tool will display your video exactly in the same way as it will appear on
+ScienceDirect.).
+
+* Impact
+
+*This is the main section of the article and the reviewers weight the description here appropriately*
+
+Indicate in what way new research questions can be pursued as a result of the software (if any).
+
+Indicate in what way, and to what extent, the pursuit of existing research questions is improved (if so).
+
+Indicate in what way the software has changed the daily practice of its users (if so).
+
+Indicate how widespread the use of the software is within and outside the intended user group.
+
+Indicate in what way the software is used in commercial settings and/or how it led to the creation of spin-off companies (if so).
+
+
+* Conclusions
+
+Set out the conclusion of this original software publication.
+
+* Conflict of Interest
+Please select the appropriate text:
+
+Potential conflict of interest exists:
+We wish to draw the attention of the Editor to the following facts, which may be considered as potential conflicts of interest, and to significant financial contributions to this work. The nature of potential conflict of interest is described below: [Describe conflict of interest]
+
+No conflict of interest exists:
+We wish to confirm that there are no known conflicts of interest associated with this publication and there has been no significant financial support for this work that could have influenced its outcome.
+
+
+
+* Acknowledgements
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+Optionally thank people and institutes you need to acknowledge. 
+
+#+begin_export latex
+%---------------------------------------------------------------------
+%
+%           Appendixes
+%
+%---------------------------------------------------------------------
+#+end_export
+
+#+begin_export latex
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+#+end_export
+
+#+begin_export latex
+%---------------------------------------------------------------------
+%
+%           References
+%
+%---------------------------------------------------------------------
+#+end_export
+
+# * References
+# :PROPERTIES:
+# :UNNUMBERED: t
+# :END:
+
+# To prevent the addition of a separate section called References before the bibliography
+# #+LATEX: \renewcommand{\bibsection}
+
+# [[nocite:*]]    # Uncomment to include a full list of references contained in
+# the bib file
+
+#+begin_export latex
+%% References:
+%% If you have bibdatabase file and want bibtex to generate the
+%% bibitems, please use
+%%
+%%  \bibliographystyle{elsarticle-num} 
+%%  \bibliography{<your bibdatabase>}
+
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+#+end_export
+
+
+#+begin_export latex
+\begin{thebibliography}{00}
+
+
+%% \bibitem{label}
+%% Text of bibliographic item
+
+\bibitem{}
+
+
+\end{thebibliography}
+Please add the reference to the software repository if DOI for software  is available. 
+#+end_export
+
+
+
+* Current executable software version
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+
+Ancillary data table required for sub version of the executable software: (x.1, x.2 etc.) kindly replace examples in right column with the correct information about your executables, and leave the left column as it is.
+
+#+begin_export latex
+\begin{table}[!h]
+\begin{tabular}{|l|p{6.5cm}|p{6.5cm}|}
+\hline
+\textbf{Nr.} & \textbf{(Executable) software metadata description} & \textbf{Please fill in this column} \\
+\hline
+S1 & Current software version & For example 1.1, 2.4 etc. \\
+\hline
+S2 & Permanent link to executables of this version  & For example: $https://github.com/combogenomics/$ $DuctApe/releases/tag/DuctApe-0.16.4$ \\
+\hline
+S3 & Legal Software License & List one of the approved licenses \\
+\hline
+S4 & Computing platforms/Operating Systems & For example Android, BSD, iOS, Linux, OS X, Microsoft Windows, Unix-like , IBM z/OS, distributed/web based etc. \\
+\hline
+S5 & Installation requirements \& dependencies & \\
+\hline
+S6 & If available, link to user manual - if formally published include a reference to the publication in the reference list & For example: $http://mozart.github.io/documentation/$ \\
+\hline
+S7 & Support email for questions & \\
+\hline
+\end{tabular}
+\caption{Software metadata (optional)}
+\label{} 
+\end{table}
+#+end_export
+
+
+* Emacs Setup                                                    :noexport:
+  This document has local variables in its postembule, which should
+  allow org-mode to work seamlessly without any setup. If you're
+  uncomfortable using such variables, you can safely ignore them at
+  startup. Exporting may require that you copy them in your .emacs.
+
+  If you are more comfortable setting the variables in preamble (first two
+  lines), it would be something like:
+
+  : -*- mode: org; coding: utf-8-unix; ispell-dictionary: "english"; org-hide-emphasis-markers: t; buffer-read-only: t; eval: (auto-fill-mode)  -*-
+
+# Local Variables:
+# mode: org
+# coding: utf-8-unix
+# ispell-dictionary: "english"
+# org-hide-emphasis-markers: t
+# buffer-read-only: t
+# org-confirm-babel-evaluate: nil
+# eval: (auto-fill-mode)
+# End:

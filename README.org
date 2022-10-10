@@ -1,0 +1,37 @@
+~SoftwareX_article_org_template~ is a org-mode template file for writing articles
+based on Elsevier's SoftwareX latex template.
+
+You only have to open it in Emacs and export with the org-mode latex exporter,
+usually typing ~C-c C-e l p~ for tex and pdf file generation.
+
+Note that some section headers are hidden. This behavior is achieved thanks to
+the ~ignore~ tag. To make it work, add the following to your emacs setup (~init.el~
+or in the ~user-config~ function of your ~.spacemacs~):
+
+#+begin_example elisp
+(require 'ox-extra)
+(ox-extras-activate '(ignore-headlines)) 
+#+end_example
+
+Please note that my own .spacemacs is included in this repository for reference.
+
+* Emacs Setup                                                 :noexport:
+  This document has local variables in its postembule, which should
+  allow org-mode to work seamlessly without any setup. If you're
+  uncomfortable using such variables, you can safely ignore them at
+  startup. Exporting may require that you copy them in your .emacs.
+
+  If you are more comfortable setting the variables in preamble (first two
+  lines), it would be something like:
+
+  : -*- mode: org; coding: utf-8-unix; ispell-dictionary: "english"; org-hide-emphasis-markers: t; buffer-read-only: t; eval: (auto-fill-mode)  -*-
+
+# Local Variables:
+# mode: org
+# coding: utf-8-unix
+# ispell-dictionary: "english"
+# org-hide-emphasis-markers: t
+# buffer-read-only: t
+# org-confirm-babel-evaluate: nil
+# eval: (auto-fill-mode)
+# End:
