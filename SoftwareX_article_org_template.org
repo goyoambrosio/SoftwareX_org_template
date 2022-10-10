@@ -22,13 +22,15 @@
 # The following variables, when exporting latex, are included in \hypersetup{}
 
 #+DESCRIPTION: Paper for Elsevier SoftwareX Journal
-#+KEYWORDS: relational, data model, api, toolbox, dataset, robotics
+#+KEYWORDS: keyword 1, keyword 2, keyword 3
 # Use keybind C-c . or C-c < or free format like "Saturday 9th, 2019"
-# #+DATE: October 6th, 2022
-#+AUTHOR: Gregorio Ambrosio Cestero
-#+EMAIL: gambrosio@uma.es
+# #+DATE: leave this option commented out or uncomment it to include your date
+#+AUTHOR: A. Author
+#+EMAIL: author@org
 #+LANGUAGE: en
-# #+CREATOR: uncomment with your text info
+# #+CREATOR: leave this option commented out or uncomment it to include your own text
+
+# Just for reference. C-c C-c to execute it
 # src_elisp{org-version} {{{results(=9.5.5=)}}}
 # src_elisp{emacs-version} {{{results(=28.2=)}}}
 
