@@ -209,7 +209,7 @@ configuration (~init.el~ or the ~user-config~ function of your ~.spacemacs~):
 (ox-extras-activate '(ignore-headlines))
 #+end_example
 
-Please note that my own ~.spacemacs~ file is included in this repository for reference.
+# Please note that my own ~.spacemacs~ file is included in this repository for reference.
 
 * Emacs Setup                                                 :noexport:
   This document has local variables in its postembule, which should

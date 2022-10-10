@@ -14,5 +14,3 @@ configuration (`init.el` or the `user-config` function of your `.spacemacs`):
     (require 'ox-extra)
     (ox-extras-activate '(ignore-headlines))
 
-Please note that my own `.spacemacs` file is included in this repository for reference.
-
