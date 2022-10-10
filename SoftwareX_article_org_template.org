@@ -1,5 +1,5 @@
 # This file is an org template that, when exported, generates the Latex template
-# with the publication format of Elsevier's SoftwareX magazine.
+# with the publication format of Elsevier's SoftwareX journal.
 
 # Author: Gregorio Ambrosio Cestero. gambrosio [at] uma [dot] es
 
