@@ -2,7 +2,7 @@
 # SoftwareX org-mode template
 
 `SoftwareX_article_org_template` is an org-mode template file for writing articles
-based on Elsevier's SoftwareX latex template.
+based on [Elsevier's SoftwareX latex template](https://www.elsevier.com/journals/softwarex/2352-7110/guide-for-authors#txt23005).
 
 You just have to open it in Emacs and export it with the latex exporter in org
 mode, usually typing `C-c C-e l p` for the generation of tex and pdf files.
