@@ -6,7 +6,7 @@
 # This file is in read only mode
 # C-x-q  to enable/disable buffer read only mode
 
-* Prelude (Ver.7.8)                                              :noexport:
+* Prelude (v7.8)                                                 :noexport:
 
 [[info:org#Export Settings]]
 [[https://orgmode.org/manual/Export-Settings.html#Export-Settings][13.2 Export Settings]]
