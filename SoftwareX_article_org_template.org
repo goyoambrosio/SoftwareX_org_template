@@ -281,35 +281,31 @@ Ancillary data table required for subversion of the codebase. Kindly replace
 examples in right column with the correct information about your current code,
 and leave the left column as it is.
 
-#+begin_export latex
-\begin{table}[H]
-\begin{tabular}{|l|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr.} & \textbf{Code metadata description} & \textbf{Please fill in this column} \\
-\hline
-C1 & Current code version & For example v42 \\
-\hline
-C2 & Permanent link to code/repository used for this code version & For example: $https://github.com/mozart/mozart2$ \\
-\hline
-C3 & Code Ocean compute capsule & For example: $https://codeocean.com/2017/07/30/neurospeech-colon-an-open-source-software-for-parkinson-apos-s-speech-analysis/code$\\
-\hline
-C4 & Legal Code License   & List one of the approved licenses \\
-\hline
-C5 & Code versioning system used & For example svn, git, mercurial, etc. put none if none \\
-\hline
-C6 & Software code languages, tools, and services used & For example C++, python, r, MPI, OpenCL, etc. \\
-\hline
-C7 & Compilation requirements, operating environments \& dependencies & \\
-\hline
-C8 & If available Link to developer documentation/manual & For example: $http://mozart.github.io/documentation/$ \\
-\hline
-C9 & Support email for questions & \\
-\hline
-\end{tabular}
-\caption{Code metadata (mandatory)}
-\label{} 
-\end{table}
-#+end_export
+#+CAPTION: Code metadata (mandatory)
+#+ATTR_LATEX: :environment tabular
+#+ATTR_LATEX: :align |l|p{6.5cm}|p{6.5cm}|
+#+ATTR_LATEX: :placement [H]
+|-----+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------|
+| *Nr.* | *Code metadata description*                                       | *Please fill in this column*                                                                                                        |
+|-----+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------|
+| C1  | Current code version                                            | For example v42                                                                                                                   |
+|-----+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------|
+| C2  | Permanent link to code/repository used for this code version    | /https://github.com/mozart/mozart2/                                                                                                 |
+|-----+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------|
+| C3  | Code Ocean compute capsule                                      | For example: /https://codeocean.com/2017/07/30/neurospeech-colon-an-open-source-software-for-parkinson-apos-s-speech-analysis/code/ |
+|-----+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------|
+| C4  | Legal Code License                                              | List one of the approved licenses                                                                                                 |
+|-----+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------|
+| C5  | Code versioning system used                                     | For example svn, git, mercurial, etc. put none if none                                                                            |
+|-----+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------|
+| C6  | Software code languages, tools, and services used               | For example C++, python, r, MPI, OpenCL, etc.                                                                                     |
+|-----+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------|
+| C7  | Compilation requirements, operating environments & dependencies |                                                                                                                                   |
+|-----+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------|
+| C8  | If available Link to developer documentation/manual             | For example: /http://mozart.github.io/documentation//                                                                               |
+|-----+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------|
+| C9  | Support email for questions                                     |                                                                                                                                   |
+|-----+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------|
 
 #+begin_export latex
 \linenumbers
